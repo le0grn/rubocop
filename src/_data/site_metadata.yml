@@ -1,11 +1,14 @@
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.metadata.myvariable }}.
-
-title: Your awesome title
-tagline: This site is totally awesome
-email: your-email@example.com
+title: RuboCop
+tagline: The Ruby Linter/Formatter that Serves and Protects
 description: >-
-  Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+  RuboCop is a Ruby static code style checker (linter) and formatter based on the community-driven Ruby Style Guide.
+team_url: https://docs.rubocop.org/rubocop/about/team.html
+docs_url: https://docs.rubocop.org
+github_url: https://github.com/rubocop/rubocop
+style_guide_url: https://rubystyle.guide
+donate_url: https://opencollective.com/rubocop
+logo_url: https://raw.githubusercontent.com/rubocop/rubocop/master/logo/rubo-logo-horizontal.png
+stats:
+  downloads: "640M+"
+  stars: "12.8k"
+  cops: "580+"
