@@ -1,4 +1,10 @@
+/* If you need to add @import statements, do so up here */
+
+@import "jit-refresh.css"; /* triggers frontend rebuilds */
+
+/* Set up Tailwind imports */
 @import "tailwindcss";
+
 @source "../../src";
 
 @theme {
@@ -29,7 +35,7 @@
 }
 
 .code-example-body {
-  @apply m-0 px-4 py-5 overflow-x-auto font-mono text-sm leading-loose;
+  @apply m-0 px-4 font-mono text-sm leading-loose;
   background: var(--color-code-bg);
   color: var(--color-code-text);
 }
@@ -56,7 +62,7 @@
 
 .offense::after {
   content: attr(data-cop) ": " attr(data-msg);
-  @apply absolute bottom-full left-0 mb-2 px-2.5 py-1.5 rounded-md text-xs whitespace-nowrap opacity-0 pointer-events-none transition-opacity z-10;
+  @apply absolute bottom-full left-0 mb-2 px-2.5 py-1.5 rounded-md text-xs whitespace-nowrap opacity-0 pointer-events-none transition-opacity z-50;
   background: #313244;
   color: #cdd6f4;
 }

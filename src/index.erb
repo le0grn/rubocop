@@ -3,8 +3,8 @@ layout: default
 ---
 
 <!-- Hero -->
-<section class="text-center py-20 px-6 max-w-5xl mx-auto">
-  <h1 class="text-4xl font-heading font-extrabold text-heading mb-4 md:text-6xl"><%= site.metadata.tagline %></h1>
+<section class="text-center py-20 px-6 max-w-5xl mt-10 mx-auto">
+  <h1 class="text-4xl font-heading font-extrabold text-heading mb-4 md:text-7xl">The <span class="text-accent">Ruby</span> <br/>Linter/Formatter that <br/> Serves and Protects</h1>
   <p class="text-lg text-muted max-w-xl mx-auto mb-10">RuboCop is a Ruby static code checker (linter) and formatter based on the community-driven <a class="text-accent hover:text-accent-hover" href="https://rubystyle.guide/">Ruby Style Guide</a></p>
 
   <div class="flex items-center justify-center gap-4 flex-wrap mb-6">
@@ -31,7 +31,7 @@ layout: default
 </section>
 
 <!-- Features + Code Example -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto px-6 py-16">
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto px-6 py-16 border-y border-gray-200">
   <div class="flex flex-col gap-6">
     <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
       <h3 class="font-heading font-semibold text-lg text-heading mb-2">Community Style Guide</h3>
@@ -53,38 +53,52 @@ layout: default
   </div>
 
   <div class="flex items-center">
-    <div class="code-example h-full">
+    <div class="code-example flex flex-col h-full flex">
       <div class="code-example-header">
         <span class="code-dot bg-[#f38ba8]"></span>
         <span class="code-dot bg-[#f9e2af]"></span>
         <span class="code-dot bg-[#a6e3a1]"></span>
         <span class="ml-2 font-mono text-xs text-gray-500">app.rb</span>
       </div>
-      <pre class="code-example-body h-full"><code><span class="line"><span class="ln">1</span><span class="kw">class</span> <span class="cn">Greeter</span></span>
+      <pre class="code-example-body grow"><code><span class="line"><span class="ln">1</span><span class="kw">class</span> <span class="cn">Greeter</span></span>
 <span class="line"><span class="ln">2</span>  <span class="kw">def</span> <span class="offense" data-cop="Naming/MethodName" data-msg="Use snake_case for method names."><span class="fn">sayHello</span></span>(<span class="ar">name</span>)</span>
 <span class="line"><span class="ln">3</span>    msg = <span class="str">"Hello, "</span> + name + <span class="str">"!"</span></span>
 <span class="line"><span class="ln">4</span>    <span class="fn">puts</span> msg</span>
 <span class="line"><span class="ln">5</span>  <span class="kw">end</span></span>
-<span class="line"><span class="ln">6</span><span class="kw">end</span></span></code></pre>
+<span class="line"><span class="ln">6</span><span class="kw">end</span></span>
+<span class="line"><span class="ln">7</span></span>
+<span class="line"><span class="ln">8</span></span>
+<span class="line"><span class="ln">9</span></span>
+<span class="line"><span class="ln">10</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span>
+<span class="line"><span class="ln">11</span></span></code></pre>
     </div>
   </div>
 </section>
 
 <!-- Stats -->
-<section class="text-center py-16 px-6 bg-gray-50">
-  <h2 class="font-heading text-3xl font-bold text-heading mb-10">The Ruby community's linter</h2>
+<section class="text-center py-16 px-6">
+  <h2 class="font-heading text-3xl font-bold text-heading mb-10">The Ruby linter used by the community</h2>
   <div class="flex justify-center gap-16 max-w-3xl mx-auto flex-wrap">
     <div class="flex flex-col items-center">
       <span class="font-heading text-4xl font-extrabold text-heading"><%= site.metadata.stats.downloads %></span>
-      <span class="text-sm text-muted mt-1">Downloads</span>
+      <span class="text-m text-muted mt-1">Downloads</span>
     </div>
     <div class="flex flex-col items-center">
       <span class="font-heading text-4xl font-extrabold text-heading"><%= site.metadata.stats.stars %></span>
-      <span class="text-sm text-muted mt-1">GitHub Stars</span>
+      <span class="text-m text-muted mt-1">GitHub Stars</span>
     </div>
     <div class="flex flex-col items-center">
       <span class="font-heading text-4xl font-extrabold text-heading"><%= site.metadata.stats.cops %></span>
-      <span class="text-sm text-muted mt-1">Cops</span>
+      <span class="text-m text-muted mt-1">Cops</span>
     </div>
   </div>
 </section>
