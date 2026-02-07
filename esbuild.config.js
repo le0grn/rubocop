@@ -1,32 +1,31 @@
 import build from "./config/esbuild.defaults.js"
+import path from "path"
 
-// You can customize this as you wish, perhaps to add new esbuild plugins.
-//
-// ```
-// import { copy } from 'esbuild-plugin-copy'
-// 
-// const esbuildOptions = {
-//   plugins: [
-//     copy({
-//       resolveFrom: 'cwd',
-//       assets: {
-//         from: ['./node_modules/somepackage/files/*')],
-//         to: ['./output/_bridgetown/somepackage/files')],
-//       },
-//       verbose: false
-//     }),
-//   ]
-// }
-// ```
-//
-// You can also support custom base_path deployments via changing `publicPath`.
-//
-// ```
-// const esbuildOptions = {
-//   publicPath: "/my_subfolder/_bridgetown/static",
-//   ...
-// }
-// ```
+// Plugin to make esbuild watch the src/ directory for Tailwind class changes.
+// Uses onResolve (not onLoad) to attach watchDirs, because the PostCSS plugin
+// from esbuild.defaults.js already claims onLoad for CSS files and would
+// shadow any later onLoad handler for the same filter.
+const tailwindErbWatchPlugin = {
+  name: "tailwind-erb-watch",
+  setup(build) {
+    build.onResolve({ filter: /index\.css/ }, async (args) => {
+      if (args.pluginData?.fromErbWatch) return null
+
+      const result = await build.resolve(args.path, {
+        resolveDir: args.resolveDir,
+        kind: args.kind,
+        pluginData: { fromErbWatch: true },
+      })
+
+      if (result.errors.length > 0) return result
+
+      return {
+        path: result.path,
+        watchDirs: [path.resolve("src")],
+      }
+    })
+  }
+}
 
 /**
  * @typedef { import("esbuild").BuildOptions } BuildOptions
@@ -34,7 +33,7 @@ import build from "./config/esbuild.defaults.js"
  */
 const esbuildOptions = {
   plugins: [
-    // add new plugins here...
+    tailwindErbWatchPlugin,
   ],
   globOptions: {
     excludeFilter: /\.(dsd|lit)\.css$/

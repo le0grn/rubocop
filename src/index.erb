@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<!-- Hero -->
+<section class="text-center py-20 px-6 max-w-5xl mx-auto">
+  <h1 class="text-4xl font-heading font-extrabold text-heading mb-4 md:text-6xl"><%= site.metadata.tagline %></h1>
+  <p class="text-lg text-muted max-w-xl mx-auto mb-10">RuboCop is a Ruby static code checker (linter) and formatter based on the community-driven <a class="text-accent hover:text-accent-hover" href="https://rubystyle.guide/">Ruby Style Guide</a></p>
+
+  <div class="flex items-center justify-center gap-4 flex-wrap mb-6">
+    <a href="https://docs.rubocop.org/rubocop/usage/basic_usage.html" class="inline-block bg-accent hover:bg-accent-hover text-white px-7 py-2.5 rounded-lg font-semibold transition-colors no-underline">Basic Usage</a>
+    <div class="inline-flex items-center gap-2 bg-code-bg text-code-text px-4 py-3 rounded-lg font-mono text-sm">
+      <code>$ gem install rubocop</code>
+      <button class="copy-btn bg-transparent border-none text-code-text cursor-pointer p-0.5 opacity-60 hover:opacity-100 transition-opacity flex items-center" data-copy="gem install rubocop" aria-label="Copy to clipboard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <p class="text-sm text-muted mb-3"> If you'd rather install using <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">bundler</code>, add a line for it in your <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">Gemfile</code> </br> (set the <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">require</code> option to <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">false</code>, as it is a standalone tool):</p>
+  <div class="inline-flex items-center gap-2 bg-code-bg text-code-text px-4 py-3 rounded-lg font-mono text-sm">
+    <code>gem 'rubocop', require: false</code>
+    <button class="copy-btn bg-transparent border-none text-code-text cursor-pointer p-0.5 opacity-60 hover:opacity-100 transition-opacity flex items-center" data-copy="gem 'rubocop', require: false" aria-label="Copy to clipboard">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
+  </div>
+
+  <div class="mt-6">
+    <a href="<%= site.metadata.donate_url %>" class="text-sm text-muted hover:text-accent no-underline">Help fund the project &rarr;</a>
+  </div>
+</section>
+
+<!-- Features + Code Example -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto px-6 py-16">
+  <div class="flex flex-col gap-6">
+    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Community Style Guide</h3>
+      <p class="text-muted text-sm leading-relaxed mb-3">Built on the community-driven Ruby Style Guide, the de facto coding standards for Ruby, trusted by thousands of developers worldwide.</p>
+      <a href="<%= site.metadata.style_guide_url %>" class="text-accent text-sm font-medium">Learn more &rarr;</a>
+    </div>
+
+    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Autocorrect &amp; Format</h3>
+      <p class="text-muted text-sm leading-relaxed mb-3">Automatically fix lint warnings and format your code. Safe autocorrect handles the obvious fixes; unsafe mode tackles the rest with your approval.</p>
+      <a href="https://docs.rubocop.org/rubocop/usage/autocorrect.html" class="text-accent text-sm font-medium">Learn more &rarr;</a>
+    </div>
+
+    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Extensible Ecosystem</h3>
+      <p class="text-muted text-sm leading-relaxed mb-3">Extend RuboCop with plugins for Rails, RSpec, Performance, and more. Configure every cop to match your team's conventions.</p>
+      <a href="https://docs.rubocop.org/rubocop/extensions.html" class="text-accent text-sm font-medium">Learn more &rarr;</a>
+    </div>
+  </div>
+
+  <div class="flex items-center">
+    <div class="code-example h-full">
+      <div class="code-example-header">
+        <span class="code-dot bg-[#f38ba8]"></span>
+        <span class="code-dot bg-[#f9e2af]"></span>
+        <span class="code-dot bg-[#a6e3a1]"></span>
+        <span class="ml-2 font-mono text-xs text-gray-500">app.rb</span>
+      </div>
+      <pre class="code-example-body h-full"><code><span class="line"><span class="ln">1</span><span class="kw">class</span> <span class="cn">Greeter</span></span>
+<span class="line"><span class="ln">2</span>  <span class="kw">def</span> <span class="offense" data-cop="Naming/MethodName" data-msg="Use snake_case for method names."><span class="fn">sayHello</span></span>(<span class="ar">name</span>)</span>
+<span class="line"><span class="ln">3</span>    msg = <span class="str">"Hello, "</span> + name + <span class="str">"!"</span></span>
+<span class="line"><span class="ln">4</span>    <span class="fn">puts</span> msg</span>
+<span class="line"><span class="ln">5</span>  <span class="kw">end</span></span>
+<span class="line"><span class="ln">6</span><span class="kw">end</span></span></code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="text-center py-16 px-6 bg-gray-50">
+  <h2 class="font-heading text-3xl font-bold text-heading mb-10">The Ruby community's linter</h2>
+  <div class="flex justify-center gap-16 max-w-3xl mx-auto flex-wrap">
+    <div class="flex flex-col items-center">
+      <span class="font-heading text-4xl font-extrabold text-heading"><%= site.metadata.stats.downloads %></span>
+      <span class="text-sm text-muted mt-1">Downloads</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span class="font-heading text-4xl font-extrabold text-heading"><%= site.metadata.stats.stars %></span>
+      <span class="text-sm text-muted mt-1">GitHub Stars</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span class="font-heading text-4xl font-extrabold text-heading"><%= site.metadata.stats.cops %></span>
+      <span class="text-sm text-muted mt-1">Cops</span>
+    </div>
+  </div>
+</section>
