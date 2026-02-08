@@ -26,6 +26,7 @@ jobs:
       - name: Build
         env:
           BRIDGETOWN_ENV: production
+          BASE_PATH: /rubocop
         run: bin/bridgetown deploy
 
       - name: Upload build artifact
