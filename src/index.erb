@@ -84,7 +84,7 @@ layout: default
 </section>
 
 <!-- Stats -->
-<section class="text-center py-8 md:py-16 px-6">
+<section class="text-center py-8 md:py-16 px-6 mx-auto max-w-5xl border-b border-gray-200">
   <h2 class="font-heading text-3xl font-bold text-heading mb-10">The Ruby linter used by the community</h2>
   <div class="flex justify-center gap-16 max-w-3xl mx-auto flex-wrap">
     <div class="flex flex-col items-center">
@@ -101,3 +101,23 @@ layout: default
     </div>
   </div>
 </section>
+
+<!-- Latest Releases -->
+<% unless site.data[:latest_releases]&.empty? %>
+<section class="text-center py-8 md:py-16 px-6">
+  <h2 class="font-heading text-3xl font-bold text-heading mb-10">Latest Releases</h2>
+  <div class="flex justify-center max-w-4xl mx-auto flex-wrap">
+    <% site.data[:latest_releases].each do |release| %>
+    <div class="flex flex-col items-center flex-1 min-w-[200px] max-w-xs">
+      <p class="font-heading text-2xl font-extrabold text-accent mb-2"><%= release[:tag] %></p>
+      <p class="text-lg text-heading mb-1"><%= release[:name] %></p>
+      <p class="text-sm text-muted mb-2"><%= release[:published_at] %></p>
+      <% unless release[:sections].empty? %>
+      <p class="text-sm text-muted mb-4"><%= release[:sections].join(", ") %></p>
+      <% end %>
+      <a href="<%= release[:url] %>" class="inline-flex items-center gap-1 text-accent text-sm font-medium hover:text-accent-hover">View on GitHub <%= svg "images/external-link.svg", class: "inline size-4" %></a>
+    </div>
+    <% end %>
+  </div>
+</section>
+<% end %>
