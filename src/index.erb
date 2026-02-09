@@ -3,8 +3,8 @@ layout: default
 ---
 
 <!-- Hero -->
-<section class="text-center py-20 px-6 max-w-5xl mt-10 mx-auto">
-  <h1 class="text-4xl font-heading font-extrabold text-heading mb-4 md:text-7xl">The <span class="text-accent">Ruby</span> <br/>Linter/Formatter that <br/> Serves and Protects</h1>
+<section class="text-center py-8 md:py-20 px-6 max-w-5xl md:mt-10 mx-auto">
+  <h1 class="text-3xl md:text-7xl font-heading font-extrabold text-heading mb-4 ">The <span class="text-accent">Ruby</span> <br class="hidden md:inline"/>Linter/Formatter that <br class="hidden lg:inline"/> Serves and Protects</h1>
   <p class="text-lg text-muted max-w-xl mx-auto mb-10">RuboCop is a Ruby static code checker (linter) and formatter based on the community-driven <a class="text-accent hover:text-accent-hover" href="https://rubystyle.guide/">Ruby Style Guide</a></p>
 
   <div class="flex items-center justify-center gap-4 flex-wrap mb-6">
@@ -12,79 +12,79 @@ layout: default
     <div class="inline-flex items-center gap-2 bg-code-bg text-code-text px-4 py-3 rounded-lg font-mono text-sm">
       <code>$ gem install rubocop</code>
       <button class="copy-btn bg-transparent border-none text-code-text cursor-pointer p-0.5 opacity-60 hover:opacity-100 transition-opacity flex items-center" data-copy="gem install rubocop" aria-label="Copy to clipboard">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <%= svg "images/copy.svg", class: "size-4.5" %>
       </button>
     </div>
   </div>
 
-  <p class="text-sm text-muted mb-3"> If you'd rather install using <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">bundler</code>, add a line for it in your <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">Gemfile</code> </br> (set the <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">require</code> option to <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">false</code>, as it is a standalone tool):</p>
+  <p class="text-sm text-muted mb-3"> If you'd rather install using <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">bundler</code>, add a line for it in your <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">Gemfile</code> <br/> (set the <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">require</code> option to <code class="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-xs">false</code>, as it is a standalone tool):</p>
   <div class="inline-flex items-center gap-2 bg-code-bg text-code-text px-4 py-3 rounded-lg font-mono text-sm">
     <code>gem 'rubocop', require: false</code>
     <button class="copy-btn bg-transparent border-none text-code-text cursor-pointer p-0.5 opacity-60 hover:opacity-100 transition-opacity flex items-center" data-copy="gem 'rubocop', require: false" aria-label="Copy to clipboard">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <%= svg "images/copy.svg", class: "size-4.5" %>
     </button>
   </div>
 
   <div class="mt-6">
-    <a href="<%= site.metadata.donate_url %>" class="text-sm text-muted hover:text-accent no-underline">Help fund the project &rarr;</a>
+    <a href="<%= site.metadata.donate_url %>" class="text-md text-muted hover:text-accent no-underline inline-flex items-center gap-1 ">Help fund the project <%= svg "images/heart-handshake.svg", class:"size-6" %></a>
   </div>
 </section>
 
 <!-- Features + Code Example -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto px-6 py-16 border-y border-gray-200">
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto px-6 py-8 md:py-16 border-y border-gray-200">
   <div class="flex flex-col gap-6">
-    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
-      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Community Style Guide</h3>
-      <p class="text-muted text-sm leading-relaxed mb-3">Built on the community-driven Ruby Style Guide, the de facto coding standards for Ruby, trusted by thousands of developers worldwide.</p>
-      <a href="<%= site.metadata.style_guide_url %>" class="text-accent text-sm font-medium">Learn more &rarr;</a>
+    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition-shadow">
+      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Find &amp; autocorrect offenses</h3>
+      <p class="text-muted text-sm leading-relaxed mb-3">Check and automatically fix offenses on your Ruby code based on the Ruby Community Style Guide.</p>
+      <a href="https://docs.rubocop.org/rubocop/usage/autocorrect.html" class="inline-flex items-center gap-1 text-accent text-sm font-medium hover:text-accent-hover">Learn more <%= svg "images/external-link.svg", class:"inline size-4"%></a>
     </div>
 
-    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
-      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Autocorrect &amp; Format</h3>
-      <p class="text-muted text-sm leading-relaxed mb-3">Automatically fix lint warnings and format your code. Safe autocorrect handles the obvious fixes; unsafe mode tackles the rest with your approval.</p>
-      <a href="https://docs.rubocop.org/rubocop/usage/autocorrect.html" class="text-accent text-sm font-medium">Learn more &rarr;</a>
+    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition-shadow">
+      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Configure cops</h3>
+      <p class="text-muted text-sm leading-relaxed mb-3">Edit the .rubocop.yml configuration file to enable/disable certain cops (checks) and alter their behavior.</p>
+      <a href="https://docs.rubocop.org/rubocop/configuration.html" class="inline-flex items-center gap-1 text-accent text-sm font-medium hover:text-accent-hover">Learn more <%= svg "images/external-link.svg", class:"inline size-4"%></a>
     </div>
 
-    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
-      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Extensible Ecosystem</h3>
-      <p class="text-muted text-sm leading-relaxed mb-3">Extend RuboCop with plugins for Rails, RSpec, Performance, and more. Configure every cop to match your team's conventions.</p>
-      <a href="https://docs.rubocop.org/rubocop/extensions.html" class="text-accent text-sm font-medium">Learn more &rarr;</a>
+    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-md transition-shadow">
+      <h3 class="font-heading font-semibold text-lg text-heading mb-2">Extend with plugins</h3>
+      <p class="text-muted text-sm leading-relaxed mb-3">Extend RuboCop with additional cops and formatters. There are many official and third-party extensions available.</p>
+      <a href="https://docs.rubocop.org/rubocop/extensions.html" class="inline-flex items-center gap-1 text-accent text-sm font-medium hover:text-accent-hover">Learn more <%= svg "images/external-link.svg", class:"inline size-4"%></a>
     </div>
   </div>
 
   <div class="flex items-center">
-    <div class="code-example flex flex-col h-full flex">
+    <div class="code-example flex flex-col h-full">
       <div class="code-example-header">
         <span class="code-dot bg-[#f38ba8]"></span>
         <span class="code-dot bg-[#f9e2af]"></span>
         <span class="code-dot bg-[#a6e3a1]"></span>
         <span class="ml-2 font-mono text-xs text-gray-500">user_greeting.rb</span>
       </div>
-      <pre class="code-example-body grow"><code><span class="line"><span class="ln"> 1</span><span class="comment"># frozen_string_literal: true</span></span>
-<span class="line"><span class="ln"> 2</span></span>
-<span class="line"><span class="ln"> 3</span><span class="comment"># Manages user greeting logic</span></span>
-<span class="line"><span class="ln"> 4</span><span class="keyword">class</span> <span class="class">UserGreeting</span></span>
-<span class="line"><span class="ln"> 5</span>  <span class="keyword">def</span> <span class="offense" data-cop="Naming/MethodName" data-msg="Use snake_case for method names."><span class="function">sayHello</span></span><span class="brackets">(</span><span class="parameter">name</span><span class="brackets">)</span></span>
-<span class="line"><span class="ln"> 6</span>    <span class="offense" data-cop="Style/IfUnlessModifier" data-msg="Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||."><span class="keyword">if</span></span> <span class="parameter">name</span><span class="function">.nil?</span><span></span>
-<span class="line"><span class="ln"> 7</span>      <span class="parameter">name</span><span> <span class="operator">=</span> <span class="offense" data-cop="Style/StringLiterals" data-msg="Prefer single-quoted strings when you don't need string interpolation or special symbols."><span class="string">"stranger"</span></span>
-<span class="line"><span class="ln"> 8</span>    <span class="keyword">end</span>
-<span class="line"><span class="ln"> 9</span></span>
-<span class="line"><span class="ln">10</span>    msg = <span class="string">"Hello,</span> <span class="comment">#</span><span class="brackets">{</span><span class="parameter">name</span><span class="brackets">}</span><span class="string">!"</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">12</span>    <span class="offense" data-cop="Style/IfUnlessModifier" data-msg="Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||."><span class="keyword">if</span></span> <span class="variable">msg</span><span class="function">.length</span> <span class="operator">></span> <span class="numeric">20</span></span>
-<span class="line"><span class="ln">13</span>      <span class="function">puts</span> msg<span class="function">.upcase</span></span>
-<span class="line"><span class="ln">14</span>    <span class="keyword">end</span></span>
-<span class="line"><span class="ln">15</span></span>
-<span class="line"><span class="ln">16</span>    <span class="offense" data-cop="Style/RedundantReturn" data-msg="Redundant return detected."><span class="keyword">return</span></span> <span class="variable">msg</span></span>
-<span class="line"><span class="ln">17</span>  <span class="keyword">end</span></span>
-<span class="line"><span class="ln">18</span><span class="keyword">end</span></span>
-<span class="line"><span class="ln">19</span></span></code></pre>
+      <pre class="code-example-body grow"><code><span><span class="ln"> 1</span><span class="comment"># frozen_string_literal: true</span></span>
+<span><span class="ln"> 2</span></span>
+<span><span class="ln"> 3</span><span class="comment"># Manages user greeting logic</span></span>
+<span><span class="ln"> 4</span><span class="keyword">class</span> <span class="class">UserGreeting</span></span>
+<span><span class="ln"> 5</span>  <span class="keyword">def</span> <span class="offense" data-cop="Naming/MethodName" data-msg="Use snake_case for method names."><span class="function">sayHello</span></span><span class="brackets">(</span><span class="parameter">name</span><span class="brackets">)</span></span>
+<span><span class="ln"> 6</span>    <span class="offense" data-cop="Style/IfUnlessModifier" data-msg="Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||."><span class="keyword">if</span></span> <span class="parameter">name</span><span class="function">.nil?</span></span>
+<span><span class="ln"> 7</span>      <span class="parameter">name</span> <span class="operator">=</span> <span class="offense" data-cop="Style/StringLiterals" data-msg="Prefer single-quoted strings when you don't need string interpolation or special symbols."><span class="string">"stranger"</span></span></span>
+<span><span class="ln"> 8</span>    <span class="keyword">end</span></span>
+<span><span class="ln"> 9</span></span>
+<span><span class="ln">10</span>    msg = <span class="string">"Hello,</span> <span class="comment">#</span><span class="brackets">{</span><span class="parameter">name</span><span class="brackets">}</span><span class="string">!"</span></span>
+<span><span class="ln">11</span></span>
+<span><span class="ln">12</span>    <span class="offense" data-cop="Style/IfUnlessModifier" data-msg="Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||."><span class="keyword">if</span></span> <span class="variable">msg</span><span class="function">.length</span> <span class="operator">></span> <span class="numeric">20</span></span>
+<span><span class="ln">13</span>      <span class="function">puts</span> msg<span class="function">.upcase</span></span>
+<span><span class="ln">14</span>    <span class="keyword">end</span></span>
+<span><span class="ln">15</span></span>
+<span><span class="ln">16</span>    <span class="offense" data-cop="Style/RedundantReturn" data-msg="Redundant return detected."><span class="keyword">return</span></span> <span class="variable">msg</span></span>
+<span><span class="ln">17</span>  <span class="keyword">end</span></span>
+<span><span class="ln">18</span><span class="keyword">end</span></span>
+<span><span class="ln">19</span></span></code></pre>
     </div>
   </div>
 </section>
 
 <!-- Stats -->
-<section class="text-center py-16 px-6">
+<section class="text-center py-8 md:py-16 px-6">
   <h2 class="font-heading text-3xl font-bold text-heading mb-10">The Ruby linter used by the community</h2>
   <div class="flex justify-center gap-16 max-w-3xl mx-auto flex-wrap">
     <div class="flex flex-col items-center">

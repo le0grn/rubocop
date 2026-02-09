@@ -12,8 +12,9 @@
       <a href="<%= @metadata.donate_url %>" class="bg-accent hover:bg-accent-hover text-white px-4 py-1.5 rounded-md font-semibold no-underline transition-colors">Donate</a>
     </div>
 
-    <button class="flex md:hidden bg-transparent border-none cursor-pointer p-1 text-gray-700" id="nav-toggle" aria-label="Toggle menu">
-      <svg class="lucide lucide-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+    <button class="relative flex md:hidden bg-transparent border-none cursor-pointer text-gray-700 size-9" id="nav-toggle" aria-label="Toggle menu">
+      <%= svg "images/menu.svg", id: "nav-icon-menu", class: "absolute inset-0 transition-opacity duration-200 opacity-100", width: 36, height: 36 %>
+      <%= svg "images/x.svg", id: "nav-icon-x", class: "absolute inset-0 transition-opacity duration-200 opacity-0", width: 36, height: 36 %>
     </button>
   </div>
 
