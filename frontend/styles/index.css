@@ -46,11 +46,16 @@
 }
 
 /* Syntax tokens (Catppuccin Mocha) */
-.code-example-body .kw { color: #cba6f7; }
-.code-example-body .cn { color: #f9e2af; }
-.code-example-body .fn { color: #89b4fa; }
-.code-example-body .str { color: #a6e3a1; }
-.code-example-body .ar { color: #fab387; }
+.code-example-body .keyword { color: #cba6f7; }
+.code-example-body .class { color: #f9e2af; }
+.code-example-body .function { color: #89b4fa; }
+.code-example-body .string { color: #a6e3a1; }
+.code-example-body .parameter { color: #eba0ac; }
+.code-example-body .numeric { color: #fab387; }
+.code-example-body .comment { color: #9399B2; }
+.code-example-body .brackets { color: #f38ba8; }
+.code-example-body .variable { color: #cdd6f4; }
+.code-example-body .operator { color: #94e2d5; }
 
 /* Offense squiggly underline + tooltip */
 .offense {
@@ -62,7 +67,9 @@
 
 .offense::after {
   content: attr(data-cop) ": " attr(data-msg);
-  @apply absolute bottom-full left-0 mb-2 px-2.5 py-1.5 rounded-md text-xs whitespace-nowrap opacity-0 pointer-events-none transition-opacity z-50;
+  @apply absolute bottom-full left-0 mb-2 px-2.5 py-1.5 rounded-md text-xs opacity-0 pointer-events-none transition-opacity z-50;
+  white-space: normal;
+  max-width: 280px;
   background: #313244;
   color: #cdd6f4;
 }

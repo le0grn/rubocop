@@ -58,28 +58,27 @@ layout: default
         <span class="code-dot bg-[#f38ba8]"></span>
         <span class="code-dot bg-[#f9e2af]"></span>
         <span class="code-dot bg-[#a6e3a1]"></span>
-        <span class="ml-2 font-mono text-xs text-gray-500">app.rb</span>
+        <span class="ml-2 font-mono text-xs text-gray-500">user_greeting.rb</span>
       </div>
-      <pre class="code-example-body grow"><code><span class="line"><span class="ln">1</span><span class="kw">class</span> <span class="cn">Greeter</span></span>
-<span class="line"><span class="ln">2</span>  <span class="kw">def</span> <span class="offense" data-cop="Naming/MethodName" data-msg="Use snake_case for method names."><span class="fn">sayHello</span></span>(<span class="ar">name</span>)</span>
-<span class="line"><span class="ln">3</span>    msg = <span class="str">"Hello, "</span> + name + <span class="str">"!"</span></span>
-<span class="line"><span class="ln">4</span>    <span class="fn">puts</span> msg</span>
-<span class="line"><span class="ln">5</span>  <span class="kw">end</span></span>
-<span class="line"><span class="ln">6</span><span class="kw">end</span></span>
-<span class="line"><span class="ln">7</span></span>
-<span class="line"><span class="ln">8</span></span>
-<span class="line"><span class="ln">9</span></span>
-<span class="line"><span class="ln">10</span></span>
+      <pre class="code-example-body grow"><code><span class="line"><span class="ln"> 1</span><span class="comment"># frozen_string_literal: true</span></span>
+<span class="line"><span class="ln"> 2</span></span>
+<span class="line"><span class="ln"> 3</span><span class="comment"># Manages user greeting logic</span></span>
+<span class="line"><span class="ln"> 4</span><span class="keyword">class</span> <span class="class">UserGreeting</span></span>
+<span class="line"><span class="ln"> 5</span>  <span class="keyword">def</span> <span class="offense" data-cop="Naming/MethodName" data-msg="Use snake_case for method names."><span class="function">sayHello</span></span><span class="brackets">(</span><span class="parameter">name</span><span class="brackets">)</span></span>
+<span class="line"><span class="ln"> 6</span>    <span class="offense" data-cop="Style/IfUnlessModifier" data-msg="Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||."><span class="keyword">if</span></span> <span class="parameter">name</span><span class="function">.nil?</span><span></span>
+<span class="line"><span class="ln"> 7</span>      <span class="parameter">name</span><span> <span class="operator">=</span> <span class="offense" data-cop="Style/StringLiterals" data-msg="Prefer single-quoted strings when you don't need string interpolation or special symbols."><span class="string">"stranger"</span></span>
+<span class="line"><span class="ln"> 8</span>    <span class="keyword">end</span>
+<span class="line"><span class="ln"> 9</span></span>
+<span class="line"><span class="ln">10</span>    msg = <span class="string">"Hello,</span> <span class="comment">#</span><span class="brackets">{</span><span class="parameter">name</span><span class="brackets">}</span><span class="string">!"</span></span>
 <span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span>
-<span class="line"><span class="ln">11</span></span></code></pre>
+<span class="line"><span class="ln">12</span>    <span class="offense" data-cop="Style/IfUnlessModifier" data-msg="Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||."><span class="keyword">if</span></span> <span class="variable">msg</span><span class="function">.length</span> <span class="operator">></span> <span class="numeric">20</span></span>
+<span class="line"><span class="ln">13</span>      <span class="function">puts</span> msg<span class="function">.upcase</span></span>
+<span class="line"><span class="ln">14</span>    <span class="keyword">end</span></span>
+<span class="line"><span class="ln">15</span></span>
+<span class="line"><span class="ln">16</span>    <span class="offense" data-cop="Style/RedundantReturn" data-msg="Redundant return detected."><span class="keyword">return</span></span> <span class="variable">msg</span></span>
+<span class="line"><span class="ln">17</span>  <span class="keyword">end</span></span>
+<span class="line"><span class="ln">18</span><span class="keyword">end</span></span>
+<span class="line"><span class="ln">19</span></span></code></pre>
     </div>
   </div>
 </section>
