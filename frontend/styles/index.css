@@ -35,7 +35,7 @@
 }
 
 .code-example-body {
-  @apply m-0 px-4 font-mono text-sm leading-loose;
+  @apply m-0 px-4 font-mono text-sm/6.5;
   background: var(--color-code-bg);
   color: var(--color-code-text);
 }
