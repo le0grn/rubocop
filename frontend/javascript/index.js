@@ -11,7 +11,7 @@ document.addEventListener("click", (e) => {
   const text = btn.dataset.copy
   navigator.clipboard.writeText(text).then(() => {
     btn.classList.add("copied")
-    setTimeout(() => btn.classList.remove("copied"), 1500)
+    setTimeout(() => btn.classList.remove("copied"), 700)
   })
 })
 
