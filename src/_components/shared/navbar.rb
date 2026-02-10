@@ -1,5 +1,10 @@
-class Shared::Navbar < Bridgetown::Component
-  def initialize(metadata:, resource:)
-    @metadata, @resource = metadata, resource
+# frozen_string_literal: true
+
+module Shared
+  class Navbar < Bridgetown::Component
+    def initialize(metadata:, resource:)
+      @metadata = metadata
+      @resource = resource
+    end
   end
 end
