@@ -36,7 +36,7 @@ bin/rubocop
 
 The site is deployed to GitHub Pages via a [GitHub Actions workflow](.github/workflows/gh-pages.yml). On every push to the `gh-pages` branch, the workflow builds the site with `bin/bridgetown deploy` and deploys the `output/` directory.
 
-The workflow automatically sets `BASE_PATH` based on the repository — forks get `/rubocop` so the site works at `<username>.github.io/rubocop/`, while the main repo uses `/` for the `rubocop.org` custom domain.
+The workflow automatically sets `BASE_PATH` based on the repository. Forks get `/rubocop` so the site works at `<username>.github.io/rubocop/`, while the main repo uses `/` for the `rubocop.org` custom domain.
 
 ## Plugins
 
