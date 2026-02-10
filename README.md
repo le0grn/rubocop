@@ -26,9 +26,17 @@ Then visit [localhost:4000](http://localhost:4000).
 
 > **Note:** When adding new Tailwind utility classes in ERB templates, you may need to restart the server for the CSS to regenerate.
 
+## Linting
+
+```sh
+bin/rubocop
+```
+
 ## Deployment
 
-The site is deployed to GitHub Pages via a [GitHub Actions workflow](.github/workflows/gh-pages.yml). On every push to the main branch, the workflow builds the site with `bin/bridgetown deploy` and deploys the `output/` directory.
+The site is deployed to GitHub Pages via a [GitHub Actions workflow](.github/workflows/gh-pages.yml). On every push to the `gh-pages` branch, the workflow builds the site with `bin/bridgetown deploy` and deploys the `output/` directory.
+
+The workflow automatically sets `BASE_PATH` based on the repository — forks get `/rubocop` so the site works at `<username>.github.io/rubocop/`, while the main repo uses `/` for the `rubocop.org` custom domain.
 
 ## Plugins
 
