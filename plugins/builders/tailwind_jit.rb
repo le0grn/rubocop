@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Builders
+  # Triggers Tailwind CSS recompilation on fast refresh during development.
   class TailwindJit < SiteBuilder
     def build
       return if ARGV.include?('--skip-tw-jit')

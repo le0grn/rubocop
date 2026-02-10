@@ -31,5 +31,5 @@ Bridgetown.configure do |_config|
   base_path ENV.fetch('BASE_PATH', '/')
 
   # Bridgetown svg inline utility
-  init :"bridgetown-svg-inliner"
+  init :'bridgetown-svg-inliner'
 end

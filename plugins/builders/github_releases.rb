@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Builders
+  # Fetches and parses the latest 3 releases from the GitHub API at build time.
   class GithubReleases < SiteBuilder
     RELEASES_URL = 'https://api.github.com/repos/rubocop/rubocop/releases'
 
@@ -22,7 +23,14 @@ module Builders
         return []
       end
 
-      JSON.parse(response.body).map do |release|
+      parse_releases(response.body)
+    rescue Faraday::Error, JSON::ParserError => e
+      Bridgetown.logger.warn('GithubReleases', "Failed to fetch releases: #{e.message}")
+      []
+    end
+
+    def parse_releases(body)
+      JSON.parse(body).map do |release|
         {
           name: release['name'],
           tag: release['tag_name'],
@@ -31,9 +39,6 @@ module Builders
           sections: release['body'].to_s.scan(/^###\s+(.+)/).flatten
         }
       end
-    rescue Faraday::Error, JSON::ParserError => e
-      Bridgetown.logger.warn('GithubReleases', "Failed to fetch releases: #{e.message}")
-      []
     end
   end
 end

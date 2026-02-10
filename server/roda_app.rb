@@ -5,7 +5,6 @@
 # server, but you can also run it in production for fast, dynamic applications.
 #
 # Learn more at: https://www.bridgetownrb.com/docs/routes
-
 class RodaApp < Roda
   plugin :bridgetown_server
 
